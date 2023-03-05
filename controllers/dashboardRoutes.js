@@ -46,4 +46,11 @@ router.get('/edit/:id', withAuth, async (req, res) => {
     }
 });
 
-module.exports = router;
+router.get("/create", withAuth, (req, res) => {
+    res.render("create-post", {
+        layout: "main",
+    });
+});
+    
+    
+    module.exports = router;
