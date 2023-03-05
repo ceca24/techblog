@@ -23,3 +23,27 @@ router.get('/', withAuth, async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.get('/edit/:id', withAuth, async (req, res) => {
+    try {
+        const postData = await Post.findByPk(req.params.id, {
+            include: [User],
+        });
+        if (postData){
+
+        const post = postData.get({ plain: true });
+
+        res.render('edit-post', {
+            post,
+            layout: 'dashboard',
+        });
+    } else {
+        res.status(404).end();
+    }
+}
+        catch (err) {
+        res.status(500).json(err);
+    }
+});
+
+module.exports = router;
