@@ -1,0 +1,24 @@
+<nav class="navbar bg-light mb-3">
+    <div class="container-fluid">
+        <h2 class="text-center card-header">Dashboard</h2>
+    </div>
+</nav>
+
+<section class="new-post-section">
+    <a class="btn btn-primary" href="/createposts">Create Post</a>
+</section>
+
+{{#if posts.length}}
+<section>
+    <ul class="post-list">
+        {{#each posts}}
+        <li>
+            {{> post}}
+            <button type="button" class="btn btn-secondary btn-sm mb-3 edit-link"><a href="/api/post/edit{{post.id}}">Edit</a> </button>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{/if}}
+
+<script src="/js/post.js"></script>
