@@ -1,0 +1,24 @@
+<div class="card">
+    <h2 class="card-header">Edit Post</h2>
+    <div class="card-body" id="edit-post-form">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Title</span>
+            <input type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1" id="edit-post-title"/>
+    </div>
+</div>
+<div class="card">
+    <div class="card-body" id="edit-post-form">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Content</span>
+            <input type="text" class="form-control" placeholder="Content" aria-label="Content" aria-describedby="basic-addon1" id="edit-post-content"/>
+    </div>
+</div>
+<button type="button" class="btn btn-primary" id="edit-post-btn">Edit Post</button>
+<input type="hidden" id="edit-post-id" value="{{post.id}}"/>
+</div>
+
+<div class="card-body">
+    <button class="btn btn-primary" type="click" id="delete-post-btn" onclick="editPostHandler({{post.id}}, 'Delete Post')">Delete Post</button>
+</div>
+
+<script src="/js/edit.js"></script>
